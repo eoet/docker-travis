@@ -6,7 +6,7 @@ before_install:
   - docker build -t hoanghiep2004hy/docker-travis -f Dockerfile.dev .
 
 script:
-  - docker run hoanghiep2004hy/docker-travis npm run test -- --coverage
+  - docker run -e CI=true hoanghiep2004hy/docker-travis npm run test
 
 deploy:
   provider: elasticbeanstalk
